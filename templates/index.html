@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recursive Poetry</title>
+    <title>タリーズAI</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,17 +26,17 @@
     </style>
 </head>
 <body>
-    <h1>Recursive Poetry</h1>
+    <h1>タリーズ豆相談AI</h1>
     
     <form action="/" method="post">
-        <label for="prompt">コーヒー豆についてご質問下さい:</label><br>
-        <textarea id="prompt" name="prompt" placeholder="おすすめの豆を教えて欲しい、、"></textarea><br><br>
+        <label for="prompt">コーヒー豆についてご質問下さい</label><br>
+        <textarea id="prompt" name="prompt" placeholder="おすすめの豆を教えて欲しい"></textarea><br><br>
         <input type="submit" value="クリックしてください">
     </form>
     
     {% if beans %}
-    <div class="poem-container">
-        <h2>Poem generated:</h2>
+    <div class="beans-container">
+        <h2>タリーズAIの回答:</h2>
         <p>{{ beans }}</p>
     </div>
     {% endif %}
