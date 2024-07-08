@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-
-from openai import OpenAI
-from flask import Flask, render_template, request
-from openai import OpenAI
-=======
 import requests
 from openai import OpenAI
 from flask import Flask, render_template, request
->>>>>>> sab
 
 client = OpenAI()
 
@@ -22,17 +15,6 @@ def home():
 
     if request.method == 'POST':
         prompt = request.form['prompt']
-<<<<<<< HEAD
-
-        completion = client.chat.completions.create(model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "You are a Tully's clerk. Please use the following spread sheet to answer the following questions about beans"},
-            {"role": "user", "content": prompt}
-        ])
-
-        # 返答を取得
-        beans = completion.choices[0].message.content
-=======
         
         response = requests.get(sheet_db)
         if response.status_code == 200:
@@ -60,7 +42,6 @@ def home():
             beans = completion.choices[0].message.content
         else:
             beans = "Failed to retrieve beans data from the sheet"
->>>>>>> sab
 
     return render_template('index.html', beans=beans)
 
