@@ -1,27 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>タリーズAI</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function insertTextAndSubmit(text) {
+            document.getElementById('prompt').value = text;
+            document.getElementById('promptForm').submit();
+        }
+    </script>
 </head>
 <body>
     <h1>タリーズ豆相談AI</h1>
-    
-    <form action="/" method="post">
-        <label for="prompt">コーヒー豆についてご質問下さい</label><br>
-        <textarea id="prompt" name="prompt" placeholder="おすすめの豆を教えて欲しい"></textarea><br><br>
-        <input type="submit" value="クリックしてください">
+
+    <img src="{{ url_for('static', filename='images/tullys.jpg') }}" alt="Tully's Coffee" class="Tullysmain">
+    <div class="button-container">
+        <button class="prompt-button" onclick="insertTextAndSubmit('おすすめの豆を教えてください')">おすすめの豆を教えてください</button>
+        <button class="prompt-button" onclick="insertTextAndSubmit('酸味が少ない豆を教えて')">酸味が少ない豆を教えて</button>
+        <button class="prompt-button" onclick="insertTextAndSubmit('彼女に豆をプレゼントしたい')">彼女に豆をプレゼントしたい</button>
+        <button class="prompt-button" onclick="insertTextAndSubmit('コクの深い豆を教えて')">コクの深い豆を教えて</button>
+    </div>
+
+
+    <form  id ="promptForm" action="/" method="post">
+        <label for="prompt" class="prompt-label">コーヒー豆についてご質問下さい</label><br>
+        <textarea id="prompt" name="prompt" placeholder="タリーズAIにメッセージを送る"></textarea>
+        <input type="submit" value="検索">
     </form>
     
+
     {% if beans %}
     <div class="beans-container">
         <h2>タリーズAIの回答:</h2>
         <p>{{ beans }}</p>
     </div>
     {% endif %}
-    
 </body>
 </html>
 
