@@ -15,7 +15,9 @@
 <body>
     <h1>beans search AI</h1>
 
-    <img src="{{ url_for('static', filename='images/tullys.jpg') }}" alt="Tully's Coffee" class="Tullysmain">
+    <div class="mark_container">
+        <img src="{{ url_for('static', filename='images/tullys.jpg') }}" alt="Tully's Coffee" class="Tullysmain">
+    </div>
 
     <h1 class="prompt-label">コーヒー豆についてご質問下さい</h1>
     <div class="button-container">
@@ -36,7 +38,7 @@
 
     {% if beans %}
     <div class="beans-container">
-        <h2>AIの回答:</h2>
+        <h2>AIの回答</h2>
         <p>{{ beans }}</p>
     </div>
     {% endif %}

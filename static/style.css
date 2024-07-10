@@ -45,14 +45,15 @@ input {
     cursor: pointer;
 }
 .beans-container {
+    border: 2px solid #ddd;
     padding: 20px; 
-    background-color: rgb(226, 226, 226);
+    background-color: #ffffff; 
     border-radius: 5px; 
     margin-top: 3%;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 3%;
-    border-radius: 20px;
+    border-radius: 20px; 
 }
 
 /* body {
@@ -78,7 +79,7 @@ input {
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 10%;
-    border-style: none;
+
 }
 
 .prompt-button{
@@ -88,12 +89,26 @@ input {
 
 .Tullysmain{
     width: 200px;
-    margin-left: 45%;
     margin-bottom: 2%;
-    
+    max-width: 100%; 
+    height: auto;
 }
 
 .prompt-button{
     border-radius: 20px; 
     border-style: none;
+}
+
+h2{
+    font-size: 20px;
+    color: rgb(115, 121, 121);
+    text-align: center;
+    margin: auto;
+    
+}
+
+.mark_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
